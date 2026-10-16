@@ -1,0 +1,6 @@
+.icono-base {
+  display: block;
+  flex: none;
+  width: var(--tamano-icono);
+  height: var(--tamano-icono);
+}

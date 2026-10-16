@@ -1,0 +1,91 @@
+.grafico-progreso {
+  display: grid;
+  gap: var(--espacio-intermedio);
+  padding: var(--espacio-intermedio) var(--espacio-4);
+  border: var(--borde-delgado) solid var(--color-borde);
+  border-radius: var(--radio-mediano);
+  background: var(--color-superficie);
+}
+.grafico-progreso__contenido {
+  min-width: 0;
+}
+.grafico-progreso h2 {
+  margin: 0;
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-seminegrita);
+  letter-spacing: 0;
+}
+.grafico-progreso__avance {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-4);
+  margin-top: var(--espacio-3);
+}
+.grafico-progreso__avance strong {
+  flex-shrink: 0;
+  font-family: var(--fuente-titulos);
+  font-size: var(--texto-3xl);
+  font-weight: var(--peso-negrita);
+  line-height: var(--interlineado-titulo);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.grafico-progreso__barra {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: var(--alto-progreso);
+  overflow: hidden;
+  border-radius: var(--espacio-1);
+  background: var(--color-borde);
+}
+.grafico-progreso progress {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+.grafico-progreso__relleno {
+  position: absolute;
+  inset: 0;
+  background: var(--color-secundario);
+  transform-origin: left center;
+  transition: transform var(--duracion-progreso) var(--curva-entrada);
+}
+@media (forced-colors: active) {
+  .grafico-progreso progress {
+    position: static;
+    width: 100%;
+    height: 100%;
+    clip-path: none;
+  }
+  .grafico-progreso__relleno {
+    display: none;
+  }
+}
+@media (min-width: 48rem) {
+  .grafico-progreso {
+    padding: var(--espacio-5);
+  }
+  .grafico-progreso__avance strong {
+    font-size: var(--texto-4xl);
+  }
+}
+@media (min-width: 64rem) {
+  .grafico-progreso {
+    grid-template-columns: minmax(0, 1.3fr) minmax(20rem, 1fr);
+    align-items: center;
+    gap: var(--espacio-6);
+  }
+}
+
+@container (max-width: 43.999rem) {
+  .grafico-progreso {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

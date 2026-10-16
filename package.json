@@ -1,0 +1,38 @@
+{
+  "name": "ritmo-diario",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "packageManager": "npm@10.8.2",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/generar-rutas-estaticas.js",
+    "deploy": "npm run build && gh-pages -d dist",
+    "preview": "vite preview",
+    "lint": "eslint src tests scripts vite.config.js eslint.config.js --max-warnings=0",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write src tests scripts vite.config.js eslint.config.js index.html package.json .prettierrc.json",
+    "format:check": "prettier --check src tests scripts vite.config.js eslint.config.js index.html package.json .prettierrc.json"
+  },
+  "dependencies": {
+    "pinia": "^4.0.2",
+    "vue": "^3.5.39",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "eslint": "^10.7.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.9.2",
+    "gh-pages": "^6.3.0",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.5",
+    "vite": "^8.1.1",
+    "vitest": "^4.1.10"
+  }
+}

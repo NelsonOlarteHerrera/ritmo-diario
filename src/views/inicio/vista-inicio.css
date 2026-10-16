@@ -1,0 +1,55 @@
+.vista-inicio .seccion-habitos__encabezado {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+@media (max-width: 47.999rem) {
+  .vista-inicio {
+    gap: var(--espacio-4);
+  }
+  .vista-inicio .vista__fecha {
+    margin-bottom: var(--espacio-2);
+  }
+  .vista-inicio .vista__descripcion,
+  .vista-inicio :deep(.aviso-ejemplos) {
+    margin-top: var(--espacio-2);
+  }
+  .vista-inicio :deep(.grafico-progreso) {
+    gap: var(--espacio-3);
+    padding: var(--espacio-4);
+  }
+  .vista-inicio :deep(.grafico-progreso__avance) {
+    margin-top: var(--espacio-2);
+  }
+  .vista-inicio .seccion-habitos {
+    gap: var(--espacio-3);
+  }
+}
+.vista-inicio {
+  container-type: inline-size;
+}
+
+@container (max-width: 20rem) {
+  .vista-inicio .seccion-habitos__encabezado {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .progreso-conteos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .progreso-conteos div,
+  .progreso-conteos div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--espacio-3);
+    padding-left: 0;
+    border-left: 0;
+  }
+  .progreso-conteos dd {
+    order: 0;
+    margin: 0;
+  }
+}

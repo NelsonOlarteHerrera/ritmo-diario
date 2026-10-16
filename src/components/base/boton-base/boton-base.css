@@ -1,0 +1,82 @@
+.boton-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-2);
+  min-height: var(--tamano-control);
+  padding: 0.5625rem var(--espacio-4);
+  border: var(--borde-delgado) solid transparent;
+  border-radius: var(--radio-pequeno);
+  font-weight: var(--peso-seminegrita);
+  line-height: var(--interlineado-texto);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--duracion-rapida) var(--curva-control),
+    border-color var(--duracion-rapida) var(--curva-control),
+    color var(--duracion-rapida) var(--curva-control);
+}
+.boton-base--primario {
+  background: var(--color-primario);
+  color: var(--color-texto-boton);
+}
+.boton-base--primario:hover {
+  background: var(--color-primario-fuerte);
+}
+.boton-base--primario:active {
+  background: var(--color-primario-presionado);
+}
+.boton-base--secundario {
+  background: transparent;
+  border-color: var(--color-borde-control);
+  color: var(--color-texto);
+}
+.boton-base--secundario:hover {
+  background: var(--color-primario-suave);
+  border-color: var(--color-primario);
+}
+.boton-base--secundario:active {
+  background: var(--color-primario-suave-presionado);
+  border-color: var(--color-primario-fuerte);
+}
+.boton-base--texto {
+  background: transparent;
+  color: var(--color-texto-secundario);
+}
+.boton-base--texto:hover {
+  background: var(--color-primario-suave);
+  color: var(--color-texto);
+}
+.boton-base--texto:active {
+  background: var(--color-primario-suave-presionado);
+  color: var(--color-texto);
+}
+.boton-base--peligro {
+  background: var(--color-error);
+  color: var(--color-texto-boton);
+}
+.boton-base--peligro:hover {
+  background: var(--color-error-fuerte);
+}
+.boton-base--peligro:active {
+  background: var(--color-error-presionado);
+}
+.boton-base:disabled,
+.boton-base[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.boton-base__indicador {
+  width: 1rem;
+  height: 1rem;
+  border: 0.125rem solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: girar-indicador 800ms linear infinite;
+}
+@keyframes girar-indicador {
+  to {
+    transform: rotate(360deg);
+  }
+}

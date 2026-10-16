@@ -1,0 +1,80 @@
+.vista-habitos__coleccion {
+  display: grid;
+  gap: var(--espacio-5);
+}
+.vista-habitos__encabezado-coleccion {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--espacio-3);
+  flex-wrap: wrap;
+}
+.vista-habitos__encabezado-coleccion h2 {
+  margin: 0;
+  font-size: var(--texto-xl);
+}
+.vista-habitos__cantidad {
+  color: var(--color-texto-secundario);
+  font-size: var(--texto-pequeno);
+}
+.vista-habitos__lista {
+  position: relative;
+  border-top: var(--borde-delgado) solid var(--color-borde);
+}
+.tarjetas-move {
+  transition: transform var(--duracion-entrada) var(--curva-entrada);
+}
+.contenido-enter-active,
+.tarjetas-enter-active {
+  transition: opacity var(--duracion-entrada) var(--curva-entrada);
+}
+.contenido-leave-active,
+.tarjetas-leave-active {
+  transition: opacity var(--duracion-salida) var(--curva-salida);
+}
+.contenido-enter-from,
+.contenido-leave-to,
+.tarjetas-enter-from,
+.tarjetas-leave-to {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tarjetas-move:not(.tarjetas-leave-active),
+  .tarjetas-enter-active {
+    position: relative;
+    z-index: 1;
+    background: var(--color-fondo);
+  }
+  .tarjetas-enter-active {
+    transition:
+      opacity var(--duracion-entrada) var(--curva-entrada),
+      transform var(--duracion-entrada) var(--curva-entrada);
+  }
+  .tarjetas-leave-active {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    transition:
+      opacity var(--duracion-salida) var(--curva-salida),
+      transform var(--duracion-salida) var(--curva-salida);
+  }
+  .tarjetas-enter-from {
+    transform: translateY(var(--desplazamiento-entrada));
+  }
+  .tarjetas-leave-to {
+    transform: translateY(calc(-1 * var(--desplazamiento-entrada)));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tarjetas-move,
+  .tarjetas-enter-active,
+  .tarjetas-leave-active {
+    transition-property: none;
+    transform: none;
+  }
+}
+@media (min-width: 48rem) {
+  .vista-habitos__encabezado-coleccion h2 {
+    font-size: var(--texto-2xl);
+  }
+}

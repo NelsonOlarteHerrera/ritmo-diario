@@ -1,0 +1,17 @@
+{
+  "aplicacion": "ritmo-diario",
+  "version": 1,
+  "fechaExportacion": "2026-07-21T00:00:00.000Z",
+  "habitos": [
+    {
+      "id": "habito-respaldo-validacion",
+      "nombre": "Hábito recuperado desde respaldo",
+      "descripcion": "Confirma que la importación reemplaza la colección solo después de validar.",
+      "categoria": "personal",
+      "color": "#5d61a8",
+      "activo": true,
+      "fechaCreacion": "2026-07-21",
+      "completados": []
+    }
+  ]
+}

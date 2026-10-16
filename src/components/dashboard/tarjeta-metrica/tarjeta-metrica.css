@@ -1,0 +1,61 @@
+.tarjeta-metrica {
+  position: relative;
+  display: grid;
+  gap: var(--espacio-2);
+  overflow: hidden;
+  padding: var(--espacio-5);
+  border: var(--borde-delgado) solid var(--color-borde);
+  border-radius: var(--radio-grande);
+  background-color: var(--color-superficie);
+  box-shadow: var(--sombra-suave);
+}
+
+.tarjeta-metrica__indicador {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.25rem;
+  background-color: var(--color-metrica);
+}
+
+.tarjeta-metrica__etiqueta,
+.tarjeta-metrica__descripcion {
+  margin: 0;
+}
+
+.tarjeta-metrica__etiqueta {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-texto-secundario);
+}
+
+.tarjeta-metrica strong {
+  font-size: clamp(var(--texto-2xl), 6vw, var(--texto-4xl));
+  line-height: 1;
+  color: var(--color-metrica);
+}
+
+.tarjeta-metrica__descripcion {
+  font-size: var(--texto-base);
+  line-height: var(--interlineado-texto);
+  color: var(--color-texto-secundario);
+}
+
+.tarjeta-metrica--primario {
+  --color-metrica: var(--color-primario-fuerte);
+}
+
+.tarjeta-metrica--secundario {
+  --color-metrica: var(--color-secundario);
+}
+
+.tarjeta-metrica--exito {
+  --color-metrica: var(--color-exito);
+}
+
+.tarjeta-metrica--advertencia {
+  --color-metrica: var(--color-advertencia);
+}

@@ -1,0 +1,6 @@
+.aviso-ejemplos {
+  max-width: var(--ancho-lectura);
+  margin: var(--espacio-3) 0 0;
+  color: var(--color-texto-secundario);
+  font-size: var(--texto-pequeno);
+}

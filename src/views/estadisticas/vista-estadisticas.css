@@ -1,0 +1,49 @@
+.estadisticas {
+  container-type: inline-size;
+  display: grid;
+  gap: var(--espacio-5);
+}
+.estadisticas__encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--espacio-3);
+}
+.estadisticas__encabezado h2 {
+  margin: 0;
+  font-size: var(--texto-xl);
+}
+.estadisticas__cantidad {
+  color: var(--color-texto-secundario);
+  font-size: var(--texto-pequeno);
+}
+.estadisticas__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 23.75rem), 1fr));
+  gap: var(--espacio-5);
+}
+@container (min-width: 49rem) {
+  .estadisticas__lista :deep(.tarjeta-estadistica) {
+    /* En varias columnas, las filas compartidas alinean títulos de distinta altura.
+       La contención de cada tarjeta impediría participar en la subcuadrícula. */
+    container-type: normal;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    align-items: start;
+    row-gap: var(--espacio-4);
+  }
+}
+.estadisticas__mensaje {
+  margin: 0;
+  padding: var(--espacio-3) var(--espacio-4);
+  border-left: var(--borde-grueso) solid var(--color-exito);
+  background: var(--color-superficie);
+  overflow-wrap: anywhere;
+}
+@media (min-width: 48rem) {
+  .estadisticas__encabezado h2 {
+    font-size: var(--texto-2xl);
+  }
+}

@@ -1,0 +1,161 @@
+.tarjeta-habito {
+  display: grid;
+  grid-template-columns: 0.75rem minmax(0, 1fr);
+  gap: var(--espacio-3);
+  padding-block: var(--espacio-5);
+  border-bottom: var(--borde-delgado) solid var(--color-borde);
+}
+.tarjeta-habito__color {
+  width: var(--espacio-2);
+  height: 1.75rem;
+  margin-top: 0.125rem;
+  border-radius: var(--radio-marcador);
+}
+.tarjeta-habito__color--verde {
+  background: var(--color-habito-verde);
+}
+.tarjeta-habito__color--ambar {
+  background: var(--color-habito-ambar);
+}
+.tarjeta-habito__color--morado {
+  background: var(--color-habito-morado);
+}
+.tarjeta-habito__color--rosa {
+  background: var(--color-habito-rosa);
+}
+.tarjeta-habito__contenido {
+  min-width: 0;
+}
+.tarjeta-habito h3 {
+  margin: 0;
+  font-size: var(--texto-grande);
+  line-height: var(--interlineado-subtitulo);
+  overflow-wrap: anywhere;
+}
+.tarjeta-habito p {
+  max-width: 65ch;
+  margin: var(--espacio-2) 0 0;
+  color: var(--color-texto-secundario);
+  overflow-wrap: anywhere;
+}
+.tarjeta-habito__categoria {
+  display: block;
+  margin-top: var(--espacio-2);
+  color: var(--color-texto-secundario);
+  font-size: var(--texto-pequeno);
+  text-transform: capitalize;
+}
+.tarjeta-habito__acciones {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espacio-1);
+  align-items: center;
+  margin-top: var(--espacio-1);
+}
+.tarjeta-habito__acciones button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-2);
+  min-height: var(--tamano-control);
+  padding: var(--espacio-2) var(--espacio-3);
+  border: var(--borde-delgado) solid transparent;
+  border-radius: var(--radio-pequeno);
+  cursor: pointer;
+  transition:
+    background-color var(--duracion-rapida) var(--curva-control),
+    border-color var(--duracion-rapida) var(--curva-control),
+    color var(--duracion-rapida) var(--curva-control);
+}
+.tarjeta-habito__completar {
+  grid-column: 1 / -1;
+  background: var(--color-primario);
+  color: var(--color-texto-boton);
+  font-weight: var(--peso-seminegrita);
+}
+.tarjeta-habito__completar:hover {
+  background: var(--color-primario-fuerte);
+}
+.tarjeta-habito__completar:active {
+  background: var(--color-primario-presionado);
+}
+.tarjeta-habito__acciones .tarjeta-habito__completar--activo {
+  background: var(--color-superficie);
+  border-color: var(--color-borde-control);
+  color: var(--color-exito);
+}
+.tarjeta-habito__completar--activo:hover {
+  border-color: var(--color-exito);
+}
+.tarjeta-habito__acciones .tarjeta-habito__completar--activo:active {
+  background: var(--color-fondo);
+  border-color: var(--color-exito);
+}
+.tarjeta-habito__completar .icono-base {
+  width: var(--tamano-icono-compacto);
+  height: var(--tamano-icono-compacto);
+}
+.confirmacion-enter-active {
+  transition:
+    opacity var(--duracion-confirmacion) var(--curva-entrada),
+    transform var(--duracion-confirmacion) var(--curva-entrada);
+}
+.confirmacion-enter-from {
+  opacity: 0;
+  transform: scale(0.85);
+}
+.tarjeta-habito__editar,
+.tarjeta-habito__eliminar {
+  background: transparent;
+  color: var(--color-texto-secundario);
+}
+.tarjeta-habito__editar:hover {
+  background: var(--color-primario-suave);
+  color: var(--color-texto);
+}
+.tarjeta-habito__editar:active {
+  background: var(--color-primario-suave-presionado);
+  color: var(--color-texto);
+}
+.tarjeta-habito__eliminar:hover {
+  background: var(--color-superficie);
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+.tarjeta-habito__eliminar:active {
+  color: var(--color-error-fuerte);
+  border-color: var(--color-error-fuerte);
+}
+.tarjeta-habito__estado {
+  grid-column: 2;
+  color: var(--color-texto-secundario);
+  font-size: var(--texto-pequeno);
+}
+@media (max-width: 47.999rem) {
+  .tarjeta-habito--compacta {
+    padding-block: var(--espacio-4);
+  }
+  .tarjeta-habito--compacta .tarjeta-habito__contenido p,
+  .tarjeta-habito--compacta .tarjeta-habito__categoria {
+    display: none;
+  }
+}
+@media (min-width: 48rem) {
+  .tarjeta-habito {
+    grid-template-columns: 0.75rem minmax(0, 1fr) auto;
+    gap: var(--espacio-5);
+    align-items: start;
+  }
+  .tarjeta-habito__acciones {
+    grid-column: 3;
+    grid-row: 1;
+    margin: 0;
+    min-width: 11rem;
+    align-self: center;
+  }
+  .tarjeta-habito__estado {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
